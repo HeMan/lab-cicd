@@ -1,0 +1,10 @@
+---
+name: lab-cicd
+
+static_sites:
+  - name: lab-cicd
+    environment_slug: node-js
+    github:
+      repo: HeMan/lab-cicd
+      branch: main
+      deploy_on_push: true
