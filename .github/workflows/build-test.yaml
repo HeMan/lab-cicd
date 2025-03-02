@@ -33,7 +33,7 @@ jobs:
     name: Build cicd-lab
     env:
       GITHUB_USER: HeMan
-      IMAGE_REGISTRY: ghcr.io/HeMan
+      IMAGE_REGISTRY: ghcr.io/heman
     steps:
       # Checkout our repository
       - uses: actions/checkout@v3
@@ -61,4 +61,4 @@ jobs:
         with:
           push: true
           # Name our container image ghcr.io/YOUR_USER/lab-cicd:latest and something similar to ghcr.io/YOUR_USER/lab-cicd:f296f4d
-          tags: "${{ env.IMAGE_REGISTRY }}/lab-cicd:${{ env.SHA_SHORT }},${{ env.IMAGE_REGISTRY }}/lab-cicd:latest"
+          tags: "${{ env.IMAGE_REGISTRY }}/lab_cicd:${{ env.SHA_SHORT }},${{ env.IMAGE_REGISTRY }}/lab_cicd:latest"
