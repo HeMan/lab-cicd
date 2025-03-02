@@ -62,3 +62,9 @@ jobs:
           push: true
           # Name our container image ghcr.io/YOUR_USER/lab-cicd:latest and something similar to ghcr.io/YOUR_USER/lab-cicd:f296f4d
           tags: "${{ env.IMAGE_REGISTRY }}/lab_cicd:${{ env.SHA_SHORT }},${{ env.IMAGE_REGISTRY }}/lab_cicd:latest"
+      - name: Deploy the app
+        uses: digitalocean/app_action/deploy@v2
+        env:
+          SAMPLE_DIGEST: ${{ steps.push.outputs.digest }}
+        with:
+          token: ${{ secrets.DO_DEPLOY_SECRET }}
