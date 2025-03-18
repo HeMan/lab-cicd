@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-  # Run on a ubuntu-22.04 VM image
+    # Run on a ubuntu-22.04 VM image
     runs-on: ubuntu-22.04
     permissions:
       packages: write
@@ -31,13 +31,7 @@ jobs:
           username: "${{ github.actor }}"
           password: "${{ github.token }}"
 
-    # Some environment variables to not have to retype the same thing all the time.
-      - name: Set environment variables
-        run: |
-          # Use a sha as version
-          echo "SHA_SHORT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
-
-    # Build and push our container image
+      # Build and push our container image
       - name: Deploy the app
         uses: digitalocean/app_action/deploy@v2
         env:
