@@ -16,7 +16,7 @@ jobs:
     permissions:
       packages: write
       contents: read
-    name: Build cicd-lab
+    name: Deploy to Digital ocean
     env:
       GITHUB_USER: HeMan
       IMAGE_REGISTRY: ghcr.io/heman

@@ -25,6 +25,7 @@ jobs:
       - name: Run unit tests
         run: npm run test
   build:
+    needs: test
   # Run on a ubuntu-22.04 VM image
     runs-on: ubuntu-22.04
     permissions:
